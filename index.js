@@ -11,15 +11,6 @@ console.log(`State up: ${new Date().toJSON()}`);
 
 const app = new Application();
 
-let counter = 0;
-
-setInterval(() => {
-  axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_ID}/sendMessage`, {
-    chat_id: -314150835,
-    text: `Ping #${++counter}`
-  });
-}, 10000);
-
 app
   .use(bodyParser())
   .use(async (ctx, next) => {
