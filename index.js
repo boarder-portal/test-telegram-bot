@@ -23,11 +23,13 @@ app
     }
   })
   .use(async (ctx, next) => {
+    /*
     if (ctx.url !== `/new-message/${TELEGRAM_BOT_ID}` || ctx.method !== 'POST') {
       return next();
     }
+    */
 
-    console.log(JSON.stringify(ctx.request.body, null, 2));
+    console.log(ctx.url, ctx.headers, JSON.stringify(ctx.request.body, null, 2));
 
     await next();
   })
